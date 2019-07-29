@@ -1,0 +1,37 @@
+mtcars analysis using Shiny
+========================================================
+author:  Robert Sneiderman
+date:  July 29,2019
+autosize: true
+
+Shiny
+========================================================
+
+Shiny is an R package that allows for the creation of interactive apps through R.
+
+We will utilize shiny to make an interactive plot that allows us to analyze a portion of the mtcars data set.
+
+
+Consider the mtcars data set
+========================================================
+
+```{r}
+summary(mtcars)
+```
+
+
+Using Shiny
+========================================================
+
+
+ We use Shiny to illustrate the relationship between car horsepower (hp) and mpg. The user selects the value of hp, and we predict the estimated mpg for that given hp value.
+ 
+Fitting the model
+========================================================
+
+We fit a model using lm, and use the predict function for a given input value of hp. 
+
+```{r}
+fit.model=lm(mpg~hp,data=mtcars)
+predict(fit.model,newdata=data.frame(hp=50))
+```
